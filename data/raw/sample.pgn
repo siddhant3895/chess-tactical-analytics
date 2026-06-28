@@ -1,0 +1,11 @@
+[Event "Live Chess - Versus Computer"]
+[Site "Chess.com"]
+[Date "2026.06.28"]
+[White "siddhant3895"]
+[Black "Martin"]
+[Result "1-0"]
+[WhiteElo "1200"]
+[BlackElo "600"]
+[Termination "siddhant3895 won by checkmate"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 d5 5. exd5 Nxd5 6. Nxf7 Kxf7 7. Qf3+ Ke6 8. Nc3 Ne7 9. O-O c6 10. d4 exd4 11. Re1+ Kd6 12. Bf4+ Nxf4 13. Qxf4+ Kd7 14. Be6+ Ke8 15. Qf7# 1-0
