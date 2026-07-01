@@ -1,11 +1,12 @@
 import os
 from src.parser import parse_pgn_metadata
 from src.analyzer import calculate_bot_win_rates
+from src.visualizer import plot_bot_win_rates
 
 def run_pipeline():
     """
     Main orchestrator that manages the end-to-end data flow
-    from raw file ingestion to metric matrix generation.
+    from raw file ingestion to metric matrix generation and visualization.
     """
     print("[START] Launching Chess Tactical Analytics Pipeline...")
     
@@ -24,8 +25,15 @@ def run_pipeline():
     print("\n--- Execution Stage 2: Metric Computation ---")
     performance_metrics = calculate_bot_win_rates(game_dataframe)
     
-    print("\n[SUCCESS] Pipeline execution sequence completed cleanly.")
+    if performance_metrics.empty:
+        print("[WARNING] Analytics matrix empty. Skipping visualization stage.")
+        return
+
+    # Trigger Layer 3: Performance Graphics Export
+    print("\n--- Execution Stage 3: Data Visualization ---")
+    output_asset = plot_bot_win_rates(performance_metrics)
+    
+    print("\n[SUCCESS] Full pipeline execution sequence completed cleanly.")
 
 if __name__ == "__main__":
     run_pipeline()
-  
